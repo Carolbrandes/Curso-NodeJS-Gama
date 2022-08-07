@@ -1,8 +1,5 @@
-import {sequelizeConnection} from "../database";
 import {Pacientes} from "./Pacientes";
 import {Psicologos} from "./Psicologos";
-
-
 import {
   Sequelize,
   Model,
@@ -11,8 +8,6 @@ import {
   InferAttributes,
   InferCreationAttributes,
 } from "sequelize";
-
-import sequelize from "sequelize/types/sequelize";
 
 
 interface UserModel extends Model<InferAttributes<UserModel>, InferCreationAttributes<UserModel>> {

@@ -1,5 +1,3 @@
-import {sequelizeConnection} from "../database";
-
 import {
   Sequelize,
   Model,
@@ -9,18 +7,16 @@ import {
   InferCreationAttributes,
 } from "sequelize";
 
-import sequelize from "sequelize/types/sequelize";
-
-
-
-
-
-interface UserModel extends Model<InferAttributes<UserModel>, InferCreationAttributes<UserModel>> {
+interface UserModel
+  extends Model<
+    InferAttributes<UserModel>,
+    InferCreationAttributes<UserModel>
+  > {
   id: CreationOptional<number>;
   name: string;
 }
 export class Pacientes extends Model {}
- Pacientes.init( 
+Pacientes.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -48,10 +44,6 @@ export class Pacientes extends Model {}
     timestamps: true,
     underscored: true,
     freezeTableName: true,
-    sequelize: new Sequelize
+    sequelize: new Sequelize(),
   }
-)
- 
- 
-
-
+);

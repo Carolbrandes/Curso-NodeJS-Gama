@@ -1,5 +1,3 @@
-import {sequelizeConnection} from "../database";
-
 import {
   Sequelize,
   Model,
@@ -9,7 +7,6 @@ import {
   InferCreationAttributes,
 } from "sequelize";
 import { Table } from "sequelize-typescript";
-import sequelize from "sequelize/types/sequelize";
 
 export class Psicologos extends Model {}
 
@@ -40,12 +37,10 @@ Psicologos.init(
     },
   },
   {
-      tableName: "psicologos",
-      timestamps: true,
-      underscored: true,
-      freezeTableName: true,
-      sequelize: new Sequelize
+    tableName: "psicologos",
+    timestamps: true,
+    underscored: true,
+    freezeTableName: true,
+    sequelize: new Sequelize(),
   }
 );
-
-
